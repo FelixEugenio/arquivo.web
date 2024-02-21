@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/home.module.scss'
 import Image from 'next/image'
+import { Input } from '@/components/ui/Input'
 
 import logoImg from '../../public/logo.svg'
 export default function Home() {
@@ -14,10 +15,16 @@ export default function Home() {
       <Image src={logoImg} alt='Logo ArquivoGPT'/>
       <div className={styles.login}>
         <form>
-          <input type='text'/>
-        </form>
-
-      </div>
+        <Input 
+        placeholder='Digite o seu email'
+        type="text"
+        />
+        <Input
+        placeholder='Digite a sua Senha'
+        type="password"
+        />
+        </form>               
+      </div> 
     </div>
     </>
   )
