@@ -17,11 +17,11 @@ export function Header() {
         </Link>
 
         <nav className={styles.menuNav}>
-          <Link href="/category">
+          <Link href="/pesquisa">
             <span>Pesquisas</span>
           </Link>
 
-          <Link href="/product">
+          <Link href="/profile">
             <span>Perfil</span>
           </Link>
 

@@ -43,7 +43,7 @@ export default function SignUp() {
   return (
     <>
     <Head>
-      <title>Faça seu cadastro agora!</title> 
+      <title>ArquivoGPT - Faça seu cadastro agora!</title> 
     </Head>
     <div className={styles.containerCenter}>
       <Image src={logoImg} alt="Logo Sujeito Pizzaria" />

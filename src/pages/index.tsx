@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <>
     <Head>
-      <title>SujeitoPizza - Faça seu login</title> 
+      <title>ArquivoGPT - Faça seu login</title> 
     </Head>
     <div className={styles.containerCenter}>
       <Image src={logoImg} alt="Logo Sujeito Pizzaria" />
@@ -70,7 +70,7 @@ export default function Home() {
             type="submit"
             loading={loading}
           >
-            Acessar
+            Entrar
           </Button>
         </form>
 
@@ -84,7 +84,7 @@ export default function Home() {
   )
 }
 
-export const getServerSideProps = canSSRGuest(async (ctx) => {
+export const getServerSideProps:GetServerSideProps = canSSRGuest(async (ctx) => {
   
   return {
     props: {}
