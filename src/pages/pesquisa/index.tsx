@@ -15,12 +15,21 @@ export default function Pesquisa() {
   const [search, setSearch] = useState('');
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
 
+  // Helper function to strip HTML tags
+  const stripHtmlTags = (html: string) => {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    return doc.body.textContent || '';
+  };
+
   async function handleSearch(event: FormEvent) {
     event.preventDefault();
 
     try {
       const response = await axios.get(`https://arquivo.pt/textsearch?q=${search}`);
-      const results: SearchResult[] = response.data.response_items;
+      const results: SearchResult[] = response.data.response_items.map((result: { snippet: string; }) => ({
+        ...result,
+        snippet: stripHtmlTags(result.snippet),
+      }));
       setSearchResults(results);
     } catch (error) {
       console.error('Erro ao buscar informações do Arquivo.pt:', error);
