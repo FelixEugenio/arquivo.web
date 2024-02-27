@@ -1,5 +1,6 @@
 // Pesquisa.tsx
 import { useState, FormEvent } from 'react';
+import { canSSRAuth } from '../../utils/canSSRAuth'
 import Head from 'next/head';
 import { Header } from '../../components/Header';
 import styles from './styles.module.scss';
@@ -83,3 +84,10 @@ export default function Pesquisa() {
     </>
   );
 }
+
+export const getServerSideProps = canSSRAuth(async (ctx) => {
+
+  return {
+    props: {}
+  }
+})

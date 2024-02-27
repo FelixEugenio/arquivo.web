@@ -11,7 +11,7 @@ export function canSSRGuest<P extends { [key: string]: any; }>(fn: GetServerSide
     if(cookies['@arquivoGPT.token']){
       return {
         redirect:{
-          destination: '/dashboard',
+          destination: '/pesquisa',
           permanent: false,
         }
       }
