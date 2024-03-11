@@ -73,10 +73,6 @@ export default function Home() {
             Entrar
           </Button>
         </form>
-
-        <Link href="/forgot">
-           <span className={styles.text}>Esqueceu a Senha</span>
-        </Link>
         <Link href="/signup">
            <span className={styles.text}>Nao possui uma conta? Cadastre-se</span>
         </Link>
